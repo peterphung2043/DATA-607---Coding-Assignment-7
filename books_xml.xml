@@ -1,0 +1,27 @@
+    <records>  
+    
+    <book_info>  
+    <title>The Signal and the Noise: Why So Many Predictions Fail--but Some Don't</title>  
+    <authors>Nate Silver</authors>
+    <first_pressing_year>2015</first_pressing_year>  
+    <movie_adaptation>NO</movie_adaptation>
+    <average_amazon_score>4.4</average_amazon_score>  
+    </book_info>
+    
+    <book_info>  
+    <title>OpenIntro Statistics: Fourth Edition</title>  
+    <authors>David Diez, Mine Cetinkaya-Rundel, Christopher Barr</authors>
+    <first_pressing_year>2019</first_pressing_year>  
+    <movie_adaptation>NO</movie_adaptation>
+    <average_amazon_score>4.3</average_amazon_score>  
+    </book_info>
+    
+    <book_info>  
+    <title>The Imitation Game: Alan Turing Decoded</title>  
+    <authors>Jill Ottaviani, Leland Purvis</authors>
+    <first_pressing_year>2016</first_pressing_year>  
+    <movie_adaptation>YES</movie_adaptation>
+    <average_amazon_score>4.1</average_amazon_score>  
+    </book_info>  
+     
+    </records>
