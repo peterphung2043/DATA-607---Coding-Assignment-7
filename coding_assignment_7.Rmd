@@ -1,0 +1,80 @@
+---
+title: "DATA 607 - Coding Assignment 7"
+author: "Peter Phung"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+### Introduction
+This report shows how to import HTML, XML, and JSON data into R. The information for 3 books were stored in a file for each file type on Github. Then the data was imported into R using various R packages. This report shows that the dataframes across all three filetypes, when the raw data for each filetype was imported into R and processed, are identical.
+
+Each entry in each imported dataframe has five variables:
+
+- `title`: The title of the book.
+- `authors`: The author(s) of the book.
+- `first_pressing_year`: The year of when the first pressing was released.
+- `movie_adaptation`: Whether or not there was a movie adaptation of the book.
+- `average_amazon_score`: The average Amazon.com review score for the book.
+
+```{r import packages, message = FALSE, echo = FALSE}
+
+library(rvest)
+library(tidyverse)
+library(XML)
+library(methods)
+library(RCurl)
+library(jsonlite)
+
+```
+
+### Importing of HTML Tables into R
+
+The url which linkes to the html file is used as one of the arguments for the `read_html` function, which reads in raw html text and returns a list. When viewing the html on a browser, the output is a html table. This table is essentially replicated in R. The `html_table` function was then used to convert the raw html data into a dataframe. The output of the dataframe from the html table is shown below.
+```{r import html data}
+
+html_url <- 'https://raw.githubusercontent.com/peterphung2043/DATA-607---Coding-Assignment-7/main/books_html.html'
+
+html_data_raw <- read_html(url(html_url))
+html_books_dataframe <- html_table(html_data_raw, fill = TRUE)[[1]]
+
+knitr::kable(html_books_dataframe)
+```
+
+### Importing of XML Data into R
+
+The `xmlToDataFrame` function was used. This function imports the raw XML text from the XML file stored on Github and converts it to a dataframe. The output of the dataframe is shown below.
+```{r import xml data}
+xml_url <- 'https://raw.githubusercontent.com/peterphung2043/DATA-607---Coding-Assignment-7/main/books_xml.xml'
+
+xml_books_dataframe <- xmlToDataFrame(getURL(xml_url), stringsAsFactors = FALSE)
+
+knitr::kable(xml_books_dataframe)
+```
+
+### Importing of JSON Data into R
+
+The `fromJSON` function works very similar to the `xmlToDataFrame` function in that it imports the raw JSON text from the JSON file stored on Github then converts it to a dataframe. The output of the dataframe is shown below.
+```{r import json data}
+json_url <- 'https://raw.githubusercontent.com/peterphung2043/DATA-607---Coding-Assignment-7/main/books_json.json'
+
+json_books_dataframe <- fromJSON(getURL(json_url))
+
+knitr::kable(json_books_dataframe)
+```
+
+### Conclusions
+Note that all three dataframes are identical to one another. This report demonstrates the different file types that can be used to store data. In the data science world, the ability to work with multiple file types is a must, as many different companies use many different filetypes.
+
+### References
+
+How to Create an HTML Table: https://www.dummies.com/programming/how-to-create-an-html-table/
+
+HTML Tables: https://www.w3schools.com/html/html_tables.asp
+
+How To...Read HTML Tables from the Internet in R #25: https://www.youtube.com/watch?v=uQ1PSac9Ef0
+
+R XML File: https://www.javatpoint.com/r-xml-file
+
+Working with JSON Files in R Programming: https://www.geeksforgeeks.org/working-with-json-files-in-r-programming/
