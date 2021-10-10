@@ -1,0 +1,23 @@
+[
+  {
+    "title": "The Signal and the Noise: Why So Many Predictions Fail--but Some Don't",
+    "authors": "Nate Silver",
+    "first_pressing_year": 2015,
+    "movie_adaptation": "NO",
+    "average_amazon_score": 4.4
+  },
+  {
+    "title": "OpenIntro Statistics: Fourth Edition",
+    "authors": "David Diez, Mine Cetinkaya-Rundel, Christopher Barr",
+    "first_pressing_year": 2019,
+    "movie_adaptation": "NO",
+    "average_amazon_score": 4.3
+  },
+  {
+    "title": "The Imitation Game: Alan Turing Decoded",
+    "authors": "Jill Ottaviani, Leland Purvis",
+    "first_pressing_year": 2016,
+    "movie_adaptation": "YES",
+    "average_amazon_score": 4.1
+  }
+]
